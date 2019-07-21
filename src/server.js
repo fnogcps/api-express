@@ -6,33 +6,33 @@ const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true}))
 
-app.get('/produtos', (req, res, next) => {
-    res.send(db.getProdutos())
+app.get('/products', (req, res, next) => {
+    res.send(db.getProduct())
     next()
 })
 
-app.get('/produtos/:id', (req, res, next) => {
-    res.send(db.getProduto(req.params.id))
+app.get('/products/:id', (req, res, next) => {
+    res.send(db.getProduct(req.params.id))
 })
 
-app.get('/produtos', (req, res, next) => {
-    res.send({ nome: 'Notebook', preco: 123.45 })
+app.get('/products', (req, res, next) => {
+    res.send({ name: 'Car', price: 60000 })
 })
 
-app.post('/produtos', (req, res, next) => {
-    const produto = db.salvarProduto({
+app.post('/products', (req, res, next) => {
+    const p = db.saveProduct({
         id: req.params.id,
-        nome: req.body.nome,
-        preco: req.body.preco
+        name: req.body.name,
+        price: req.body.price
     })
-    res.send(produto)
+    res.send(p)
 })
 
-app.delete('/produtos/:id', (req, res, next) => {
-    const produto = db.excluirProduto(req.params.id)
-    res.send(produto)
+app.delete('/products/:id', (req, res, next) => {
+    const p = db.deleteProduct(req.params.id)
+    res.send(p)
 })
 
 app.listen(port, () => {
-    console.log('Servidor executando na porta', port)
+    console.log(`Serving HTTP on 0.0.0.0 port ${port} ...`)
 })
