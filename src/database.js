@@ -3,20 +3,21 @@ const sequence = {
     get id() { return this._id++ }
 }
 
-const produtos = {}
+const products = {}
 
-function salvarProduto(produto) {
-    if(!produto.id) produto.id = sequence.id
-    produtos[produto.id] = produto
-    return produto
+function saveProduct(p) {
+    if(!p.id) p.id = sequence.id
+    products[p.id] = p
+    return p
 }
 
-function getProduto(id) { return produtos[id] || {} }
-function getProdutos(id) { return Object.values(produtos) }
+function getProduct(id) { return products[id] || {} }
+function getProducts() { return Object.values(products) }
 
-function excluirProduto(id) {
-    const produto = produtos.id
-    delete produtos[id]
-    return produto
+function deleteProduct(id) {
+    const p = products.id
+    delete products[id]
+    return p
 }
-module.exports = {salvarProduto, getProduto, getProdutos, excluirProduto}
+
+module.exports = {saveProduct, getProduct, getProducts, deleteProduct}
