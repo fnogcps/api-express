@@ -1,7 +1,7 @@
 {
   "name": "api-express",
   "version": "1.0.0",
-  "description": "A simple API Express",
+  "description": "A simple API with Express.js",
   "author": "Felipe Nogueira <contato.fnog@gmail.com>",
   "repository": "https://github.com/fnogcps/api-express",
   "main": "src/server.js",
