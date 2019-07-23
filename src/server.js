@@ -4,10 +4,10 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/products', (req, res, next) => {
-    res.send(db.getProduct())
+    res.send(db.getProducts())
     next()
 })
 
