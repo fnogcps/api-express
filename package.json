@@ -13,7 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "minimist": ">=1.2.6",
-    "nodemon": "^2.0.3",
+    "nodemon": "^2.0.20",
     "kind-of": ">=6.0.3"
   },
   "dependencies": {
